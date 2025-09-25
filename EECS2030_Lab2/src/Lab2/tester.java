@@ -84,4 +84,22 @@ class tester {
 		assertEquals(0, TestingExample.LicencePoints(actualSpeed, maxSpeed, stuntDriving));
 	}
 
+	@Test
+	void invalidTest() {
+		int actualSpeed = 49;
+		int maxSpeed = 50;
+		boolean stuntDriving = false;
+
+		assertEquals(-1, TestingExample.LicencePoints(actualSpeed, maxSpeed, stuntDriving));
+
+		actualSpeed = -1;
+		assertEquals(-1, TestingExample.LicencePoints(actualSpeed, maxSpeed, stuntDriving));
+		
+		maxSpeed = -1;
+		assertEquals(-1, TestingExample.LicencePoints(actualSpeed, maxSpeed, stuntDriving));
+
+		actualSpeed = 0;
+		assertEquals(-1, TestingExample.LicencePoints(actualSpeed, maxSpeed, stuntDriving));
+	}
+
 }
